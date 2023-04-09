@@ -3,5 +3,6 @@ export type CreateRaidDTO = {
   raidName: string;
   gates: number;
   gearMin: number;
+  partySize: number;
   gearMax: number;
 };

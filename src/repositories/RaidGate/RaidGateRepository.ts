@@ -17,7 +17,7 @@ export class RaidGateRepository implements IRaidGateRepository {
       }
     });
   }
-  async findAll(id?: string): Promise<RaidGateModel[]> {
+  async findAll(): Promise<RaidGateModel[]> {
     const chars = await prisma.raidGate.findMany();
 
     return chars;

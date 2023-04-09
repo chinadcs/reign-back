@@ -6,13 +6,15 @@ export class UpdateRaidController {
   constructor(private updateRaidUseCase: UpdateRaidUseCase) {}
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { name, raidName, gates, gearMax, gearMin } = req.body as RaidModel;
+    const { name, raidName, gates, gearMax, gearMin, partySize } =
+      req.body as RaidModel;
     const raid = <RaidModel>{
       name: name,
       raidName: raidName,
       gates: gates,
       gearMin: gearMin,
-      gearMax: gearMax
+      gearMax: gearMax,
+      partySize: partySize
     };
 
     try {

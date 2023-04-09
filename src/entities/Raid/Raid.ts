@@ -3,6 +3,7 @@ export class RaidModel {
   public name!: string;
   public raidName!: string;
   public gearMin!: number;
+  public partySize!: number;
   public gearMax!: number;
   public gates!: number;
 

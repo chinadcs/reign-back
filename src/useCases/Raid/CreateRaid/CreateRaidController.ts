@@ -6,7 +6,7 @@ export class CreateRaidController {
   constructor(private createRaidUseCase: CreateRaidUseCase) {}
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { name, raidName, gates, gearMax, gearMin } =
+    const { name, raidName, gates, gearMax, gearMin, partySize } =
       req.body as CreateRaidDTO;
 
     const raid = <CreateRaidDTO>{
@@ -14,7 +14,8 @@ export class CreateRaidController {
       raidName: raidName,
       gates: gates,
       gearMin: gearMin,
-      gearMax: gearMax
+      gearMax: gearMax,
+      partySize: partySize
     };
 
     try {

@@ -51,8 +51,9 @@ model Raid {
   id        String     @id @default(uuid())
   name      String
   raidName  String
+  partySize Int
   gearMin   Int
-  gearMax   Int        @default(99999)
+  gearMax   Int        @default(9999)
   gates     Int
   raidGates RaidGate[]
 
@@ -69,5 +70,20 @@ model RaidGate {
   raidId String
 
   @@index([raidId])
-  @@map("raids_gate")
+  @@map("raid_gates")
+}
+
+model Task {
+  id        String  @id @default(uuid())
+  name      String
+  gearMin   Int
+  gearMax   Int     @default(9999)
+  frequency String
+  scope     String
+  amount    Int
+  days      String
+  enabled   Boolean
+  icon      String
+
+  @@map("tasks")
 }
