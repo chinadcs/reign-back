@@ -12,7 +12,6 @@ router.get('/all/:id?', (res, req) => {
   return fetchCharsController.handle(res, req);
 });
 
-//TODO:  Create update user, signout, delete
 router.get('/:id', async (res, req) => {
   return fetchCharController.handle(res, req);
 });
