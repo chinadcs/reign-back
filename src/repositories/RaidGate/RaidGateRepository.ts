@@ -4,7 +4,17 @@ import { prisma } from 'prisma/prisma';
 export class RaidGateRepository implements IRaidGateRepository {
   async save(raidGate: RaidGateModel): Promise<void> {
     await prisma.raidGate.create({
-      data: raidGate
+      data: {
+        name: raidGate.name,
+        gear: raidGate.gear,
+        gold: raidGate.gold,
+        chest: raidGate.chest,
+        raid: {
+          connect: {
+            id: raidGate.raidId
+          }
+        }
+      }
     });
   }
   async findAll(id?: string): Promise<RaidGateModel[]> {
